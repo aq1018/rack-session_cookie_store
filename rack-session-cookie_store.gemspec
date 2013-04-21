@@ -6,7 +6,7 @@ require 'rack/session/cookie_store/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "rack-session-cookie_store"
-  gem.version       = Rack::CookieStore::VERSION
+  gem.version       = Rack::Session::CookieStore::VERSION
   gem.authors       = ["Aaron Qian"]
   gem.email         = ["aq1018@gmail.com"]
   gem.description   = %q{ a better cookie session store for rack. }
