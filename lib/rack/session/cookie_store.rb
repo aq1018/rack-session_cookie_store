@@ -13,7 +13,7 @@ module Rack
         end
 
         def unsign(data, secret)
-          return nil unless data[0..1] == 's:'
+          return nil unless data && data[0..1] == 's:'
           str = data[2..-1]
           str = str[0...str.rindex('.')]
           return nil unless sign(str, secret) == data
