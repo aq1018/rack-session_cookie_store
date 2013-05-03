@@ -1,6 +1,8 @@
-# Rack::CookieStore
+# Rack::Session::CookieStore
 
-TODO: Write a gem description
+Node.js connect compatible signed cookie session store.
+Use this gem if you want to share cookie sessions between your rack / rails
+app with connect / express framework from Node.js
 
 ## Installation
 
@@ -18,7 +20,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# In Rack
+use Rack::Session::CookieStore, secret: 'your secret',
+                                domain: 'your.domain.com',
+                                key:    'your.session.key'
+```
+
+```coffeescript
+# In Node
+
+connect = require 'connect'
+app     = connect()
+
+app.use connect.cookieParser()
+
+app.use connect.cookieSession(
+  secret: 'your secret'
+  key:    'your.session.key'
+  cookie:
+    domain: 'your.domain.com'
+)
+```
 
 ## Contributing
 
